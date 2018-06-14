@@ -9,11 +9,9 @@ const NavBar = props => (
         <div className="collapse navbar-collapse">
             <ul className="nav navbar-nav mr-auto">
                 <li className="nav-item">
-                    <p>Clicky Game</p>
+                    <p>{props.guess}</p>
                 </li>
-                <li className="nav-item">
-                    <p>Clicky Game</p>
-                </li>
+
                 <li>
                     <p>Score: {props.score} | Top Score: {props.topScore}</p>
                 </li>
