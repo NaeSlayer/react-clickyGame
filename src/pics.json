@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "image": "./assets/images/spaceCat1.jpg"
+    },
+    {
+        "id": 2,
+        "image": "./assets/images/spaceCat2.jpg"
+    },
+    {
+        "id": 3,
+        "image": "./assets/images/spaceCat3.jpg"
+    },
+    {
+        "id": 4,
+        "image": "./assets/images/spaceCat4.jpg"
+    },
+    {
+        "id": 5,
+        "image": "./assets/images/spaceCat5.jpg"
+    },
+    {
+        "id": 6,
+        "image": "./assets/images/spaceCat6.jpg"
+    },
+    {
+        "id": 7,
+        "image": "./assets/images/spaceCat7.jpg"
+    },
+    {
+        "id": 8,
+        "image": "./assets/images/spaceCat8.jpg"
+    },
+    {
+        "id": 9,
+        "image": "./assets/images/spaceCat9.jpg"
+    },
+    {
+        "id": 10,
+        "image": "./assets/images/spaceCat10.jpg"
+    },
+    {
+        "id": 11,
+        "image": "./assets/images/spaceCat11.jpg"
+    },
+    {
+        "id": 12,
+        "image": "./assets/images/spaceCat12.jpg"
+    }
+]

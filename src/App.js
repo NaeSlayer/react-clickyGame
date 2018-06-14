@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import friends from "./friends.json";
+import pics from "./pics.json";
 import './App.css';
 import PicCard from './components/PicCard';
 import NavBar from './components/NavBar';
@@ -11,7 +11,7 @@ let clickedArr = [];
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
-    friends,
+    pics,
     score: 0,
     topScore: 0,
     guess: "Click an image to begin!"
@@ -46,15 +46,14 @@ class App extends Component {
       })
     }
     console.log(clickedArr);
+    // shuffle pics will get called here
+  }
 
-
-
-    // if no -> push id to clickedArr
-    //          add 1 to score
-    //          shuffle pics
-    //          if score > top score then replace top score
-
-
+  shuffleCards = cards => {
+    for (let i = cards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [cards[i], cards[j]] = [cards[j], cards[i]];
+    }
   }
 
 
@@ -64,15 +63,12 @@ class App extends Component {
         <NavBar score={this.state.score} topScore={this.state.topScore} guess={this.state.guess} />
         <Hero />
         <Wrapper>
-          {this.state.friends.map(friend => (
+          {this.state.pics.map(pic => (
             <PicCard
-              onClick={() => this.handleClickEvent(friend.id)}
-              id={friend.id}
-              key={friend.id}
-              name={friend.name}
-              image={friend.image}
-              occupation={friend.occupation}
-              location={friend.location}
+              onClick={() => this.handleClickEvent(pic.id)}
+              id={pic.id}
+              key={pic.id}
+              image={pic.image}
             />
           ))}
         </Wrapper>
