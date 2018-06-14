@@ -9,19 +9,24 @@ import Wrapper from './components/Wrapper';
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
-    friends
+    friends,
+    score: 0,
+    topScore: 0
   };
+  handleClickEvent() {
+
+  }
 
 
   render() {
     return (
       <div className="App">
-        <NavBar />
+        <NavBar score={this.state.score} topScore={this.state.topScore} />
         <Hero />
         <Wrapper>
           {this.state.friends.map(friend => (
             <PicCard
-              removeFriend={this.removeFriend}
+              onClick={this.handleClickEvent}
               id={friend.id}
               key={friend.id}
               name={friend.name}

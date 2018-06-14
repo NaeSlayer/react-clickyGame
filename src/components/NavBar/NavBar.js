@@ -7,7 +7,7 @@ const NavBar = props => (
         <p className="navbar-text">Clicky Game</p>
 
         <div className="collapse navbar-collapse">
-            <ul className="navbar-nav">
+            <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
                     <p>Clicky Game</p>
                 </li>
@@ -15,7 +15,7 @@ const NavBar = props => (
                     <p>Clicky Game</p>
                 </li>
                 <li>
-                    <p>Clicky Score</p>
+                    <p>Score: {props.score} | Top Score: {props.topScore}</p>
                 </li>
             </ul>
         </div>
