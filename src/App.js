@@ -19,7 +19,6 @@ class App extends Component {
 
 
   handleClickEvent = id => {
-    alert("you clicked a pic");
     // check clickedArr to see if id is there
     if (clickedArr.indexOf(id) !== -1) {
       // if yes -> game over, reset game
