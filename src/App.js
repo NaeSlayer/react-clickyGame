@@ -6,6 +6,8 @@ import NavBar from './components/NavBar';
 import Hero from './components/Hero';
 import Wrapper from './components/Wrapper';
 
+const clickedArr = [];
+
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
@@ -13,7 +15,28 @@ class App extends Component {
     score: 0,
     topScore: 0
   };
-  handleClickEvent() {
+
+
+
+  handleClickEvent = id => {
+    alert("you clicked a pic");
+    // check clickedArr to see if id is there
+    if (clickedArr.indexOf(id) !== -1) {
+      // if yes -> game over, reset game
+      alert("Game over");
+    } else {
+      clickedArr.push(id);
+      // this.setState({
+      //   this.state.score: this.state.score += 1,
+      // })
+    }
+    console.log(clickedArr);
+
+    // if no -> push id to clickedArr
+    //          add 1 to score
+    //          shuffle pics
+    //          if score > top score then replace top score
+
 
   }
 
@@ -26,7 +49,7 @@ class App extends Component {
         <Wrapper>
           {this.state.friends.map(friend => (
             <PicCard
-              onClick={this.handleClickEvent}
+              onClick={() => this.handleClickEvent(friend.id)}
               id={friend.id}
               key={friend.id}
               name={friend.name}
