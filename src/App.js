@@ -5,6 +5,9 @@ import PicCard from './components/PicCard';
 import NavBar from './components/NavBar';
 import Hero from './components/Hero';
 import Wrapper from './components/Wrapper';
+import Row from './components/Row';
+import Col from './components/Col';
+import Container from './components/Container';
 
 let clickedArr = [];
 
@@ -63,14 +66,22 @@ class App extends Component {
         <NavBar score={this.state.score} topScore={this.state.topScore} guess={this.state.guess} />
         <Hero />
         <Wrapper>
+          <Container className="container mx-5">
+          <Row>
+            
           {this.state.pics.map(pic => (
+            <Col size="3" className="m-1">
             <PicCard
               onClick={() => this.handleClickEvent(pic.id)}
               id={pic.id}
               key={pic.id}
               image={pic.image}
             />
+            </Col>
           ))}
+          
+          </Row>
+          </Container>
         </Wrapper>
 
       </div>

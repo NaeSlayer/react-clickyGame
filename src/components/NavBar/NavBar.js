@@ -2,18 +2,18 @@ import React from "react";
 import "./NavBar.css";
 
 const NavBar = props => (
+    <nav className="navbar navbar-expand-lg navbar-light fixed-top my-nav">
+        <p>Clicky Game</p>
 
-    <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <p className="navbar-brand">Clicky Game</p>
-
-        <div className="collapse navbar-collapse">
-            <ul className="nav navbar-nav mr-auto">
-                <li className="nav-item">
+        <div className="collapse navbar-collapse justify-content-around">
+            <ul className="nav navbar-nav d-flex justify-content-between">
+                <li className="nav-item m-3">
                     <p>{props.guess}</p>
                 </li>
+                
 
-                <li>
-                    <p>Score: {props.score} | Top Score: {props.topScore}</p>
+                <li className="nav-item m-3">
+                    <p> Score: {props.score} | Top Score: {props.topScore}</p>
                 </li>
             </ul>
         </div>

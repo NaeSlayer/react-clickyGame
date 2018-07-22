@@ -1,6 +1,7 @@
 import React from "react";
 import "./Wrapper.css";
+// import space from "../../../public/assets/images/space.jpg"
 
-const Wrapper = props => <div style={{ backgroundImage: "./assets/images/space.jpg" }} className="wrapper">{props.children}</div>;
+const Wrapper = props => <div className="wrapper">{props.children}</div>;
 
 export default Wrapper;
