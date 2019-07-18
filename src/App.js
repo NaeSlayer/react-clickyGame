@@ -12,7 +12,7 @@ import Container from './components/Container';
 let clickedArr = [];
 
 class App extends Component {
-  // Setting this.state.friends to the friends json array
+
   state = {
     pics,
     score: 0,
@@ -43,10 +43,17 @@ class App extends Component {
 
     } else {
       clickedArr.push(id);
-      this.setState({
-        score: this.state.score + 1,
-        guess: "You Guessed Correctly"
-      })
+      if (clickedArr.length === 12) {
+        this.setState({
+          score: this.state.score + 1,
+          guess: "You Win!!"
+        })
+      } else {
+        this.setState({
+          score: this.state.score + 1,
+          guess: "You Guessed Correctly"
+        })
+      }
     }
     console.log(clickedArr);
     this.shufflePics(pics);
@@ -67,20 +74,20 @@ class App extends Component {
         <Hero />
         <Wrapper>
           <Container className="container mx-5">
-          <Row>
-            
-          {this.state.pics.map(pic => (
-            <Col size="3" className="m-1">
-            <PicCard
-              onClick={() => this.handleClickEvent(pic.id)}
-              id={pic.id}
-              key={pic.id}
-              image={pic.image}
-            />
-            </Col>
-          ))}
-          
-          </Row>
+            <Row>
+
+              {this.state.pics.map(pic => (
+                <Col size="3" className="m-1">
+                  <PicCard
+                    onClick={() => this.handleClickEvent(pic.id)}
+                    id={pic.id}
+                    key={pic.id}
+                    image={pic.image}
+                  />
+                </Col>
+              ))}
+
+            </Row>
           </Container>
         </Wrapper>
 
